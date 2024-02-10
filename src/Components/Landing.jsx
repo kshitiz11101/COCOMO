@@ -56,17 +56,17 @@ const Landing = () => {
     };
 
      const options = {
-      method: 'POST',
-      url: 'https://judge0-ce.p.rapidapi.com/submissions',
-      params: { base64_encoded: "true", fields: "*" },
-      headers: {
-        "content-type": "application/json",
-        "Content-Type": "application/json",
-        "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
-        "X-RapidAPI-Key": 'd733c648f1mshe43d60590914b45p1a1572jsncc8aa30644b5',
-      },
-      data: formData,
-    };
+    method: 'POST',
+    url: process.env.REACT_APP_RAPID_API_URL,
+    params: { base64_encoded: "true", fields: "*" },
+    headers: {
+      "content-type": "application/json",
+      "Content-Type": "application/json",
+      "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
+      "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+    },
+    data: formData,
+  };
 
 
     axios.request(options).then(function (response) {
@@ -93,14 +93,14 @@ const Landing = () => {
 
   const CheckStatus = async (token) => {
     const options = {
-      method: "GET",
-      url: `https://judge0-ce.p.rapidapi.com/submissions/${token}`,
-      params: { base64_encoded: "true", fields: "*" },
-      headers: {
-        "X-RapidAPI-Host": 'judge0-ce.p.rapidapi.com',
-        "X-RapidAPI-Key": 'd733c648f1mshe43d60590914b45p1a1572jsncc8aa30644b5',
-      },
-    };
+    method: "GET",
+    url: `${process.env.REACT_APP_RAPID_API_URL}/${token}`,
+    params: { base64_encoded: "true", fields: "*" },
+    headers: {
+      "X-RapidAPI-Host": process.env.REACT_APP_RAPID_API_HOST,
+      "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+    },
+  };
 
 
     try {
