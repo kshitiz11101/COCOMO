@@ -74,16 +74,16 @@ const Landing = () => {
       CheckStatus(token);
     }).catch((err) => {
       let error = err.response ? err.response.data : err;
-      // let status = err.response.status;
-      // console.log("status", status);
+      let status = err.response.status;
+      console.log("status", status);
 
-      // if (status === 429) {
-      //   console.log("Too many requests", status);
-      //   showErrorToast(
-      //     `Quota of 100 requests exceeded for the Day! Please read the blog on freeCodeCamp to learn how to set up your own RAPID API Judge0!`,
-      //     10000
-      //   );
-      // }
+      if (status === 429) {
+        console.log("Too many requests", status);
+        showErrorToast(
+          `Quota of 100 requests exceeded for the Day! Please read the blog on freeCodeCamp to learn how to set up your own RAPID API Judge0!`,
+          10000
+        );
+      }
 
       setProcessing(false);
       console.log("Catch block:", error);
@@ -103,7 +103,7 @@ const Landing = () => {
 
     try {
       let response = await axios.request(options);
-      let statusId = response.data.id;
+      let statusId = response.data.status.id;
       
 
       if (statusId === 1 || statusId === 2) {
