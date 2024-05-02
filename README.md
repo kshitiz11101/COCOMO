@@ -1,3 +1,8 @@
+# Codehub: A Code Editor
+A fully functional Code Editor using judge0 rapid-api.It compiles the code of more than 40
+programming languages and is able to execute a program for a different test case using custom
+input
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
