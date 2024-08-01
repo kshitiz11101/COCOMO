@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "codehub",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,9 @@
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.7",
+    "docx": "^8.5.0",
+    "file-saver": "^2.0.5",
+    "jspdf": "^2.5.1",
     "monaco-themes": "^0.4.4",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.33",
